@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Family Tree</h1>
+    <div class="controls">
+        <form id="member-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="relation" placeholder="Relation (e.g., Son, Wife)">
+            <input type="text" id="dob" placeholder="Details (e.g., DOB)">
+            <select id="parent-id">
+                <option value="">-- Select Parent (Leave blank for Root) --</option>
+            </select>
+            <button type="submit">Add Member</button>
+        </form>
+        <button id="clear-tree">Clear Tree</button>
+    </div>
+
+    <div class="tree" id="tree-container">
+        <!-- Tree will be rendered here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
