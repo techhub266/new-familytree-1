@@ -1,30 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Family Tree</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <h1>Family Tree</h1>
+
     <div class="controls">
+
         <form id="member-form">
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="text" id="relation" placeholder="Relation (e.g., Son, Wife)">
-            <input type="text" id="dob" placeholder="Details (e.g., DOB)">
-            <select id="parent-id">
-                <option value="">-- Select Parent (Leave blank for Root) --</option>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Name"
+                required
+            >
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
-            <button type="submit">Add Member</button>
+            <select id="relation" required>
+                <option value="">Select Relationship</option>
+                <option value="Husband">
+                    Husband
+                </option>
+                <option value="Wife">
+                    Wife
+                </option>
+                <option value="Son">
+                    Son
+                </option>
+                <option value="Daughter">
+                    Daughter
+                </option>
+                <option value="Son-in-law">
+                    Son-in-law
+                </option>
+                <option value="Daughter-in-law">
+                    Daughter-in-law
+                </option>
+
+                <option value="Father">
+                    Father
+                </option>
+                <option value="Mother">
+                    Mother
+                </option>
+                <option value="Brother">
+                    Brother
+                </option>
+
+                <option value="Sister">
+                    Sister
+                </option>
+
+                <option value="Spouse">
+                    Spouse
+                </option>
+            </select>
+            <input
+                type="text"
+                id="dob"
+                placeholder="DOB / Details"
+            >
+            <select id="related-id">
+                <option value="">
+                    -- Select Related Person --
+                </option>
+            </select>
+            <button type="submit">
+                Add Member
+            </button>
+
         </form>
-        <button id="clear-tree">Clear Tree</button>
+
+        <button id="clear-tree">
+            Clear Tree
+        </button>
+
     </div>
 
-    <div class="tree" id="tree-container">
-        <!-- Tree will be rendered here -->
+
+    <div
+        class="tree"
+        id="tree-container">
     </div>
+
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
