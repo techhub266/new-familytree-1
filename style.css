@@ -1,122 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
+
     text-align: center;
-    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+
+    background: linear-gradient(
+        135deg,
+        #e0c3fc,
+        #8ec5fc
+    );
+
     min-height: 100vh;
+
     margin: 0;
-    padding-bottom: 50px;
+
+    padding: 30px;
 }
+
+
+h1 {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
 .controls {
-    margin: 20px;
-    padding: 15px;
     background: white;
-    display: inline-block;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    padding: 20px;
+
+    margin: auto;
+
+    width: fit-content;
+
+    max-width: 95%;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
 }
-input, select, button {
-    padding: 8px;
-    margin: 5px;
-}
+
+
+input,
+select,
 button {
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-}
-button:hover { background-color: #45a049; }
-#clear-tree { background-color: #f44336; }
-#clear-tree:hover { background-color: #d32f2f; }
+    padding: 10px;
 
-/* Basic Tree CSS using nested lists */
-.tree {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-.tree ul {
-    padding-top: 20px; 
-    position: relative;
-    transition: all 0.5s;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-}
-.tree li {
-    float: left; text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 20px 5px 0 5px;
-    transition: all 0.5s;
-}
-/* Draw lines */
-.tree li::before, .tree li::after{
-    content: '';
-    position: absolute; top: 0; right: 50%;
-    border-top: 2px solid #ccc;
-    width: 50%; height: 20px;
-}
-.tree li::after{
-    right: auto; left: 50%;
-    border-left: 2px solid #ccc;
-}
-.tree li:only-child::after, .tree li:only-child::before {
-    display: none;
-}
-.tree li:only-child{ padding-top: 0;}
-.tree li:first-child::before, .tree li:last-child::after{
-    border: 0 none;
-}
-.tree li:last-child::before{
-    border-right: 2px solid #ccc;
-    border-radius: 0 5px 0 0;
-}
-.tree li:first-child::after{
-    border-radius: 5px 0 0 0;
-}
-.tree ul ul::before{
-    content: '';
-    position: absolute; top: 0; left: 50%;
-    border-left: 2px solid #ccc;
-    width: 0; height: 20px;
-}
+    margin: 5px;
 
-/* Card Styling */
-.member-card {
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    background-color: white;
-    font-family: arial, verdana, tahoma;
-    font-size: 14px;
-    display: inline-block;
     border-radius: 5px;
-    transition: all 0.5s;
+
+    border: 1px solid #ccc;
+}
+
+
+button {
+    background: #4caf50;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: #388e3c;
+}
+
+
+#clear-tree {
+    background: #f44336;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   TREE
+========================= */
+
+.tree {
+    margin-top: 50px;
+
+    overflow-x: auto;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   FAMILY BRANCH
+========================= */
+
+.family-branch {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 20px;
+}
+
+
+/* =========================
+   HUSBAND + WIFE
+========================= */
+
+.couple {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
     position: relative;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    min-width: 100px;
 }
-.member-card:hover {
-    background: #c8e4f8; border: 1px solid #94a0b4;
+
+
+.spouse-line {
+    width: 40px;
+
+    height: 3px;
+
+    background: #444;
 }
+
+
+/* =========================
+   CHILDREN
+========================= */
+
+.children {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-top: 50px;
+
+    position: relative;
+}
+
+
+.children::before {
+    content: "";
+
+    position: absolute;
+
+    top: -25px;
+
+    left: 50%;
+
+    width: 3px;
+
+    height: 25px;
+
+    background: #444;
+}
+
+
+/* =========================
+   MEMBER CARD
+========================= */
+
+.member-card {
+    position: relative;
+
+    background: white;
+
+    min-width: 150px;
+
+    padding: 18px;
+
+    border: 2px solid #555;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.member-name {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+.member-relation {
+    font-size: 14px;
+
+    color: #555;
+}
+
+
+.member-details {
+    font-size: 12px;
+
+    color: #888;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
 .delete-btn {
     position: absolute;
+
     top: -10px;
+
     right: -10px;
-    background: #f44336;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 12px;
-    width: 24px;
-    height: 24px;
-    display: none;
-    line-height: 12px;
+
+    width: 25px;
+
+    height: 25px;
+
     padding: 0;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background: red;
+
+    color: white;
+
+    border: none;
 }
-.member-card:hover .delete-btn {
-    display: block;
+
+
+.delete-btn:hover {
+    background: darkred;
 }
